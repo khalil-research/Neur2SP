@@ -1,0 +1,6 @@
+@inproceedings{dumouchelle2022neur2sp,
+  title={Neur2SP: Neural Two-Stage Stochastic Programming},
+  author={Dumouchelle, Justin and Patel, Rahul and Khalil, Elias B. and Bodur, Merve},
+  booktitle={Neural Information Processing Systems (NeurIPS)},
+  year={2022}
+}
