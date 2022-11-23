@@ -192,48 +192,48 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--problems', type=str, nargs='+', default=['cflp_10_10'],
-         description = 'The problem(s) to run.  Must be from the following set of problems: \n\
+         help = 'The problem(s) to run.  Must be from the following set of problems: \n\
                             cflp_10_10, cflp_25_25, cflp_50_50, sslp_5_25, sslp_10_50, \n\
                             sslp_15_45, ip_b_E, ip_b_H, ip_i_E, ip_i_H, pp')
     parser.add_argument('--data_dir', type=str, default='./data/',
-         description = 'The data directory.  This should be left as the default unless otherwise required.')
+         help = 'The data directory.  This should be left as the default unless otherwise required.')
     parser.add_argument('--n_cpus', type=int, default=1,
-         description = 'Number of CPUs/threads to use.  This is only used in data generation and evaluating first-stage solutions.')
+         help = 'Number of CPUs/threads to use.  This is only used in data generation and evaluating first-stage solutions.')
 
     # run all commands (this overrides all below arguments)
     parser.add_argument('--run_all', type=int, default=0,
-         description = 'Runs all commands for a specified problem.  Should only be used in if reproducing experiements sequentially.')
+         help = 'Runs all commands for a specified problem.  Should only be used in if reproducing experiements sequentially.')
 
     # commands indicating which parts of experiements to run
     parser.add_argument('--run_dg_inst', type=int, default=0,
-         description = 'Runs commands to generate instance')
+         help = 'Runs commands to generate instance')
     parser.add_argument('--run_dg_p', type=int, default=0,
-         description = 'Runs commands to generate dataset for NN-P.')
+         help = 'Runs commands to generate dataset for NN-P.')
     parser.add_argument('--run_dg_e', type=int, default=0,
-         description = 'Runs commands to generate dataset for NN-E.')
+         help = 'Runs commands to generate dataset for NN-E.')
 
     # train models
     parser.add_argument('--train_lr', type=int, default=0,
-         description = 'Trains linear regression model.')
+         help = 'Trains linear regression model.')
     parser.add_argument('--train_nn_p', type=int, default=0,
-         description = 'Trains NN-P model.')
+         help = 'Trains NN-P model.')
     parser.add_argument('--train_nn_e', type=int, default=0,
-         description = 'Trains NN-E model.')
+         help = 'Trains NN-E model.')
 
     parser.add_argument('--get_best_nn_p_model', type=int, default=0,
-         description = 'Recovers best model for NN-P.')
+         help = 'Recovers best model for NN-P.')
     parser.add_argument('--get_best_nn_e_model', type=int, default=0,
-         description = 'Recovers best model for NN-E.')
+         help = 'Recovers best model for NN-E.')
 
     # evaluate models
     parser.add_argument('--eval_lr', type=int, default=0,
-         description = 'Evaluations opimization model with linear regression predictor.')
+         help = 'Evaluations opimization model with linear regression predictor.')
     parser.add_argument('--eval_nn_p', type=int, default=0,
-         description = 'Evaluations opimization model with NN-P predictor.')
+         help = 'Evaluations opimization model with NN-P predictor.')
     parser.add_argument('--eval_nn_e', type=int, default=0,
-         description = 'Evaluations opimization model with NN-E predictor.')
+         help = 'Evaluations opimization model with NN-E predictor.')
     parser.add_argument('--eval_ef', type=int, default=0,
-         description = 'Evaluations extensive form.')
+         help = 'Evaluations extensive form.')
 
     # This argument is mostly for those with parallel computing resources.  
     # Parallel computing is not strictly nesseary, but will provide notable in evaluation.  
@@ -254,9 +254,9 @@ if __name__ == '__main__':
     #   - Evaluate Models and Extensive Form: 
     #       python runner.py --problems cflp_10_10 --eval_lr 1 --eval_nn_p 1 --eval_nn_e 1 --eval_nn_p 1 --as_dat 1
     parser.add_argument('--as_dat', type=int, default=0,
-         description = 'Indicator for saving commands to .dat files for use with parallel computing.')
+         help = 'Indicator for saving commands to .dat files for use with parallel computing.')
     parser.add_argument('--dat_file', type=str, default='table.dat',
-         description = 'File to save batch commands to.')
+         help = 'File to save batch commands to.')
 
     args = parser.parse_args()
 
