@@ -374,7 +374,7 @@ class SSLPDataManager(DataManager):
 
             # create .mps file if it does not exist
             if not os.path.isfile(lp_smps_file):
-                f_content = [f"{lp_file_prefix}.cor\n", f"{lp_file_prefix}.tim\n", f"{lp_file_prefix}.sto"]
+                f_content = [f"{sslp_instance}.cor\n", f"{sslp_instance}.tim\n", f"{sslp_instance}.sto"]
                 with open(lp_smps_file, 'w') as f:
                     f.writelines(f_content)
 
